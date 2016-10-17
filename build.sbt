@@ -11,7 +11,8 @@ lazy val docSettings = Seq(
 	},
 	autoAPIMappings := true,
 	scalaVersion := "2.12.0-RC2",
-	fork := true
+	scalaHome := Some(file("/Users/jgreen/opensource/scala/build/pack")),
+	libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value
 )
 lazy val `foo-lib` = (project in file("foo-lib")).
 	settings(docSettings: _*)
